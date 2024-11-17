@@ -51,22 +51,41 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .social-links a {
-            display: inline-block;
-            margin: 10px;
-            color: #333;
-            text-decoration: none;
+        .dropdown {
+            margin-top: 20px;
+            text-align: left;
         }
 
-        .social-links a:hover {
-            color: #007BFF;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
+        .dropdown button {
+            padding: 10px 15px;
+            font-size: 16px;
             background-color: #333;
             color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .dropdown button:hover {
+            background-color: #555;
+        }
+
+        .dropdown-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .dropdown-content div {
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        .dropdown-content div h3 {
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -82,7 +101,30 @@
     <div class="container">
         <section id="about" class="about">
             <h2>About Me</h2>
-            <p>Hello! I am Krishna, a budding web developer exploring the world of programming and design. This is my first webpage!</p>
+            <p>Hello! My name is Krishna. I am a budding web developer exploring the world of programming and design.</p>
+            
+            <!-- Dropdown Section -->
+            <div class="dropdown">
+                <button onclick="toggleDropdown()">Explore About Me</button>
+                <div id="dropdown-content" class="dropdown-content">
+                    <div id="photos">
+                        <h3>Photos</h3>
+                        <p>Here are some photos of my work and achievements.</p>
+                    </div>
+                    <div id="achievements">
+                        <h3>Achievements</h3>
+                        <p>🏆 Winner of XYZ competition. <br> 🥇 Certified Web Developer.</p>
+                    </div>
+                    <div id="education">
+                        <h3>Educational Qualifications</h3>
+                        <p>Bachelor's in Computer Science, ABC University.</p>
+                    </div>
+                    <div id="skills">
+                        <h3>Skills</h3>
+                        <p>Programming, Web Development, Graphic Design, Blockchain Development.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="contact" class="social-links">
@@ -94,7 +136,14 @@
     </div>
 
     <footer>
-        <p>Made with ❤️ by [Your Name]</p>
+        <p>Made with ❤️ by Krishna</p>
     </footer>
+
+    <script>
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById('dropdown-content');
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </body>
 </html>
